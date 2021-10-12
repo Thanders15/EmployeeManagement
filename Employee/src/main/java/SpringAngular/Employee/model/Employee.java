@@ -2,13 +2,10 @@ package SpringAngular.Employee.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
 import javax.persistence.*;
 
 @Getter
 @Setter
-@EntityScan
 @Entity
 @Table(name = "employees")
 public class Employee {
@@ -26,14 +23,18 @@ public class Employee {
     @Column(name = "emailId")
     private String emailId;
 
+    @Column(name = "phoneNumber")
+    private Long phoneNumber;
+
     public Employee(){
 
     }
-    public Employee(String firstName, String lastName, String emailId){
+    public Employee(String firstName, String lastName, String emailId, Long phoneNumber){
         super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailId = emailId;
+        this.phoneNumber = phoneNumber;
     }
 
 
