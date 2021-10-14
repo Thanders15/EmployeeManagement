@@ -20,8 +20,8 @@ public class Employee {
     @Column(name = "lastName")
     private String lastName;
 
-    @Column(name = "emailId")
-    private String emailId;
+    @Column(name = "email")
+    private String email;
 
     @Column(name = "phoneNumber")
     private Long phoneNumber;
@@ -29,11 +29,11 @@ public class Employee {
     public Employee(){
 
     }
-    public Employee(String firstName, String lastName, String emailId, Long phoneNumber){
+    public Employee(String firstName, String lastName, String email, Long phoneNumber){
         super();
         this.firstName = firstName;
         this.lastName = lastName;
-        this.emailId = emailId;
+        this.email = email;
         this.phoneNumber = phoneNumber;
     }
 
