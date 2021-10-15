@@ -1,1 +1,30 @@
-<p>add-employee works!</p>
+<div class="col-md-8 offset-md-3">
+<h2>Add employee</h2>
+<form (ngSubmit) = "addSubmit()">
+    <div class = "form-group">
+        <label>First name</label>
+        <input type = "text" class="form-controll" id="firstName"
+        [(ngModel)] = "employee.firstName" name = "firstName">
+    </div>
+
+    <div class = "form-group">
+        <label>Last name</label>
+        <input type = "text" class="form-controll" id="lastName"
+        [(ngModel)] = "employee.lastName" name = "lastName">
+    </div>
+
+    <div class = "form-group">
+        <label>Email</label>
+        <input type = "text" class="form-controll" id="email"
+        [(ngModel)] = "employee.email" name = "Email">
+    </div>
+
+    <div class = "form-group">
+        <label>Phone number</label>
+        <input type = "text" class="form-controll" id="phoneNumber"
+        [(ngModel)] = "employee.phoneNumber" name = "phoneNumber">
+    </div>
+
+    <button class="btn btn-success" type = "submit">Submit</button>
+</form>
+</div>
