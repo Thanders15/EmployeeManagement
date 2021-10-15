@@ -27,7 +27,6 @@ public class Employee {
     private Long phoneNumber;
 
     public Employee(){
-
     }
     public Employee(String firstName, String lastName, String email, Long phoneNumber){
         super();
