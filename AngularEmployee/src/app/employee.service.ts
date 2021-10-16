@@ -11,7 +11,10 @@ export class EmployeeService {
   private baseURL = "http://localhost:8080/employees";
   constructor(private httpClient: HttpClient) { }
 
-  getEmployeesService(): Observable<Employee[]>{
+  getEmployees(): Observable<Employee[]>{
     return this.httpClient.get<Employee[]>(`${this.baseURL}`);
+  }
+  addEmployee(employee: Employee): Observable<Object>{
+    return this.httpClient.post(`${this.baseURL}`, employee);
   }
 }

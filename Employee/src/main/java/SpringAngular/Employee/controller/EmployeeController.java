@@ -1,25 +1,32 @@
 package SpringAngular.Employee.controller;
 
+import SpringAngular.Employee.exception.ResourceNotFoundException;
 import SpringAngular.Employee.model.Employee;
-import SpringAngular.Employee.repository.EmployeeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import SpringAngular.Employee.service.EmployeeService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
+@RequiredArgsConstructor
 public class EmployeeController {
 
-    @Autowired
-    private EmployeeRepository employeeRepository;
+    private final EmployeeService employeeService;
 
     @GetMapping("/employees")
     public List<Employee> getAllEmployees(){
-        return employeeRepository.findAll();
+        return employeeService.getEmployees();
+    }
+
+    @GetMapping("/employees/{id}")
+    public Employee getSingleEmployee(@PathVariable long id){
+        return employeeService.getSingleEmployee(id);
     }
 
     @PostMapping("/employees")
-    public Employee createEmployee(@RequestBody Employee employee){
-        return employeeRepository.save(employee);
+    public Employee addEmployee(@RequestBody Employee employee){
+        return employeeService.addEmployee(employee);
     }
 }
