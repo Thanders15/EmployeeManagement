@@ -16,7 +16,7 @@ export class AddEmployeeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  addSubmit(){
+  onSubmit(){
     console.log(this.employee)
     this.saveChanges();
   }

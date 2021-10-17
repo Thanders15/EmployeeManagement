@@ -6,6 +6,7 @@ import SpringAngular.Employee.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -26,5 +27,22 @@ public class EmployeeService {
 
     public Employee addEmployee(Employee employee) {
         return employeeRepository.save(employee);
+    }
+
+    @Transactional
+    public Employee editEmployee(Long id, Employee employee) {
+        Employee employeeToEdit = employeeRepository.findById(id).orElseThrow(() ->
+                new ResourceNotFoundException("Pracownik do edycji z podanym id nie istnieje"));
+
+        employeeToEdit.setFirstName(employee.getFirstName());
+        employeeToEdit.setLastName(employee.getLastName());
+        employeeToEdit.setEmail(employee.getEmail());
+        employeeToEdit.setPhoneNumber(employee.getPhoneNumber());
+
+        return employeeRepository.save(employeeToEdit);
+    }
+
+    public void deleteEmployee(Long id) {
+        employeeRepository.deleteById(id);
     }
 }

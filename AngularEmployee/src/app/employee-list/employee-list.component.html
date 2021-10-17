@@ -7,6 +7,7 @@
             <th>Nazwisko</th>
             <th>Email</th>
             <th>Numer telefonu</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -15,6 +16,9 @@
             <td>{{employee.lastName}}</td>
             <td>{{employee.email}}</td>
             <td>{{employee.phoneNumber}}</td>
+            <td>
+                <button (click) = "editEmployee(employee.id)" class="btn btn-info">Edytuj</button>
+            </td>
         </tr>
     </tbody>
 </table>

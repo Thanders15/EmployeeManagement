@@ -1,0 +1,32 @@
+<div class="top-buffer">
+    <div class="col-md-6 offset-md-5 wrapper">
+    <h3>Edytuj pracownika</h3>
+    <form (ngSubmit) = "onSubmit()">
+        <div class = "form-group">
+            <th>Imię</th>
+            <input type = "text" class="form-controll" id="firstName"
+            [(ngModel)] = "employee.firstName" name = "firstName">
+        </div>
+    
+        <div class = "form-group">
+            <th>Nazwisko</th>
+            <input type = "text" class="form-controll" id="lastName"
+            [(ngModel)] = "employee.lastName" name = "lastName">
+        </div>
+    
+        <div class = "form-group">
+            <th>Email</th>
+            <input type = "text" class="form-controll" id="email"
+            [(ngModel)] = "employee.email" name = "Email">
+        </div>
+    
+        <div class = "form-group">
+            <th>Numer telefonu</th>
+            <input type = "text" class="form-controll" id="phoneNumber"
+            [(ngModel)] = "employee.phoneNumber" name = "phoneNumber">
+        </div>
+    
+        <button class="btn btn-success" type = "submit">Edytuj</button>
+    </form>
+    </div>
+    </div>

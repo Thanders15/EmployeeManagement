@@ -21,12 +21,17 @@ public class EmployeeController {
     }
 
     @GetMapping("/employees/{id}")
-    public Employee getSingleEmployee(@PathVariable long id){
+    public Employee getSingleEmployee(@PathVariable Long id){
         return employeeService.getSingleEmployee(id);
     }
 
     @PostMapping("/employees")
     public Employee addEmployee(@RequestBody Employee employee){
         return employeeService.addEmployee(employee);
+    }
+
+    @PutMapping("/employees/{id}")
+    public Employee editEmployee(@PathVariable Long id, @RequestBody Employee employee){
+         return employeeService.editEmployee(id, employee);
     }
 }
