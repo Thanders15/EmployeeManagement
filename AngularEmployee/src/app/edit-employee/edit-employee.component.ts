@@ -24,11 +24,11 @@ export class EditEmployeeComponent implements OnInit {
     }, error => console.log(error));
   }
 
-  onSubmit(){
+  onClick(){
     this.employeeService.editEmployee(this.id, this.employee).subscribe( data =>{
       this.goToEmployeeList();
     }
-    , error => console.log(error));
+    ,error => console.log(error));
   }
 
   goToEmployeeList(){
