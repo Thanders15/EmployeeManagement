@@ -1,17 +1,15 @@
 package SpringAngular.Employee.controller;
 
-import SpringAngular.Employee.exception.ResourceNotFoundException;
 import SpringAngular.Employee.model.Employee;
 import SpringAngular.Employee.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequiredArgsConstructor
-public class EmployeeController {
+public class EmployeeControllerForAdmin {
 
     private final EmployeeService employeeService;
 
